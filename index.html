@@ -1,77 +1,94 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html class="page" lang="ru">
   <head>
     <meta charset="utf-8">
     <title>Магазин мороженного «Глейси»</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="img/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="img/favicon/favicon180.png">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
-  <body>
+  <body class="page-body">
 
-    <header>
-      <nav>
-        <a>
-          <img src="img/gllacy-logo.svg" alt="Логотип магазина Глейси" width="137" height="56">
-        </a>
-        <ul>
-          <li>
-            <a href="catalog.html">Каталог</a>
-            <ul class="popup">
-              <li><a href="#">Новинки</a></li>
-              <li><a href="catalog.html">Сливочное</a></li>
-              <li><a href="#">Щербеты</a></li>
-              <li><a href="#">Фруктовый лед</a></li>
-              <li><a href="#">Мелорин</a></li>
-            </ul>
+    <header class="main-header container">
+      <a class="navigation__logo">
+        <img src="img/gllacy-logo.svg" alt="Логотип магазина Глейси" width="137" height="56">
+      </a>
+      <nav class="navigation">
+        <ul class="navigation__list">
+          <li class="navigation__item">
+            <a class="header-button" href="catalog.html">Каталог</a>
+            <div class="popup popup--left">
+              <ul class="navigation__submenu popup__inner">
+                <li class="navigation__novelties"><a href="#">Новинки</a></li>
+                <li><a href="catalog.html">Сливочное</a></li>
+                <li><a href="#">Щербеты</a></li>
+                <li><a href="#">Фруктовый лед</a></li>
+                <li><a href="#">Мелорин</a></li>
+              </ul>
+            </div>
           </li>
-          <li><a href="#">Доставка и оплата</a></li>
-          <li><a href="#">О компании</a></li>
+          <li class="navigation__item"><a class="header-button" href="#">Доставка и оплата</a></li>
+          <li class="navigation__item"><a class="header-button" href="#">О компании</a></li>
         </ul>
       </nav>
-      <a href="tel:+78005558628">+7 800 555-86-28</a>
-      <ul>
-        <li>
-          <a href="#">Поиск по сайту</a>
-          <div class="popup">
-            <form action="#" method="get">
-              <label>
-                <span>Поисковой запрос:</span>
-                <input type="search" placeholder="Поиск по сайту">
-              </label>
-            </form>
-          </div>
-        </li>
-        <li>
-          <a href="#">Вход</a>
-          <div class="popup">
-            <p>Личный кабинет</p>
-            <form action="#" method="get">
-              <label>
-                <span>Ваш Email</span>
-                <input type="email" placeholder="email@example.com">
-              </label>
-              <label>
-                <span>Ваш пароль</span>
-                <input type="password" placeholder="••••••">
-              </label>
-              <button type="submit">Войти</button>
-              <a href="#">Забыли пароль?</a>
-              <a href="#">Регистрация</a>
-            </form>
-          </div>
-        </li>
-        <li>
-          <a href="#"><span>Корзина: </span>Пусто</a>
-          <div class="popup">
-            <p>Ваша корзина пока пуста</p>
-          </div>
-        </li>
-      </ul>
+      <div class="user-menu">
+        <a class="user-menu__phone" href="tel:+78005558628">+7 800 555-86-28</a>
+        <ul class="user-menu__list">
+          <li class="user-menu__item header-search">
+            <a class="header-button header-search__button" href="#">
+              <span class="visually-hidden">Поиск по сайту</span>
+            </a>
+            <div class="popup">
+              <form class="popup__inner header-search__form" action="#" method="get">
+                <label>
+                  <span class="visually-hidden">Поисковой запрос:</span>
+                  <input type="search" placeholder="Поиск по сайту">
+                </label>
+              </form>
+            </div>
+          </li>
+          <li class="user-menu__item header-login">
+            <a class="header-button header-login__button" href="#">Вход</a>
+            <div class="popup">
+              <div class="popup__inner header-login__box">
+                <p class="header-login__title">Личный кабинет</p>
+                <form class="header-login__form" action="#" method="get">
+                  <label>
+                    <span class="visually-hidden">Ваш Email</span>
+                    <input type="email" placeholder="email@example.com">
+                  </label>
+                  <label>
+                    <span class="visually-hidden">Ваш пароль</span>
+                    <input type="password" placeholder="••••••">
+                  </label>
+                  <button class="button button--secondary" type="submit">Войти</button>
+                  <a href="#">Забыли пароль?</a>
+                  <a href="#">Регистрация</a>
+                </form>
+              </div>
+            </div>
+          </li>
+          <li class="user-menu__item header-cart">
+            <a class="header-button header-cart__button" href="#"><span class="visually-hidden">Корзина: </span>Пусто</a>
+            <div class="popup">
+              <div class="popup__inner header-cart__box">
+                <p class="header-cart__title header-cart__title--empty">Ваша корзина пока пуста</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
     </header>
 
-    <main>
+    <main class="container">
 
-      <h1>Магазин мороженного «Глейси»</h1>
+      <h1 class="visually-hidden">Магазин мороженного «Глейси»</h1>
 
-      <section>
+      <section class="promo">
         <h2>Промо-предложения мороженного</h2>
         <ul>
           <li>
@@ -80,7 +97,7 @@
             <p>Натуральное мороженое из свежих сливок <br>
               и молока с вкуснейшим клубничным джемом <br>
               – это идеальный десерт для всей семьи.</p>
-            <a href="#">Заказать</a>
+            <a class="button" href="#">Заказать</a>
           </li>
           <li>
             <h3>Сливочное мороженое со&nbsp;вкусом банана</h3>
@@ -88,7 +105,7 @@
             <p>Сливочное мороженое с ярким банановым <br>
               вкусом подарит вам свежесть и наслаждение <br>
               даже в самый жаркий летний день.</p>
-            <a href="#">Заказать</a>
+            <a class="button" href="#">Заказать</a>
           </li>
           <li>
             <h3>Карамельный пломбир с&nbsp;маршмеллоу</h3>
@@ -96,7 +113,7 @@
             <p>Необычный сладкий десерт с карамельным <br>
               топпингом и кусочками зефира завоюет <br>
               сердца сладкоежек всех возрастов.</p>
-            <a href="#">Заказать</a>
+            <a class="button" href="#">Заказать</a>
           </li>
         </ul>
         <ul>
@@ -106,7 +123,7 @@
         </ul>
       </section>
 
-      <section>
+      <section class="gifts">
         <h2>Подарки за заказ</h2>
         <p>Заказывайте мороженое и получайте подарки!</p>
         <ul>
@@ -115,19 +132,19 @@
             <p>При покупке 2 кг любого фруктового <br>
               мороженого добавим в ваш заказ банку <br>
               малинового варенья бесплатно.</p>
-            <a href="#">Хочу подарок</a>
+            <a class="button" href="#">Хочу подарок</a>
           </li>
           <li>
             <h3>Маршмеллоу даром!</h3>
             <p>При покупке 2 кг пломбира добавим <br>
               в ваш заказ упаковку нежных <br>
               зефирок совершенно бесплатно.</p>
-            <a href="#">Хочу подарок</a>
+            <a class="button" href="#">Хочу подарок</a>
           </li>
         </ul>
       </section>
 
-      <section>
+      <section class="popular">
         <h2>Популярные вкусы мороженного</h2>
         <p>Попробуйте самые популярные вкусы нашего мороженого</p>
         <ul>
@@ -162,7 +179,7 @@
         </ul>
       </section>
 
-      <section>
+      <section class="benefits">
         <h2>Преимущества Глейси</h2>
         <p>Магазин Глейси – это онлайн и офлайн-магазин по продаже мороженого собственного проиводства на развес</p>
         <ul>
@@ -181,7 +198,7 @@
         </ul>
       </section>
 
-      <section>
+      <section class="blog">
         <h2>Наш сладкий блог</h2>
         <article>
           <h3><a href="#">10 способов сервировки фруктовых щербетов к столу</a></h3>
@@ -194,12 +211,12 @@
           <form action="#" method="get">
             <label for="blog-subscribe__email">Ваш email</label>
             <input id="blog-subscribe__email" type="email" placeholder="email@example.com">
-            <button type="submit">Отправить</button>
+            <button class="button button--secondary" type="submit">Отправить</button>
           </form>
         </div>
       </section>
 
-      <section>
+      <section class="delivery">
         <h2>Доставка любимого мороженого на дом</h2>
         <p>Хочется полакомиться любимым дессертом, <br>
           но нет времени съездить в магазин? Закажите <br>
@@ -211,6 +228,9 @@
           <form action="#" method="get">
             <label>
               <span>Дата</span>
+              <div class="tooltip">
+                <p>Доставка осуществляется с 9:00 до 21:00</p>
+              </div>
               <input type="text" placeholder="01.04.2020">
             </label>
             <label>
@@ -219,14 +239,17 @@
             </label>
             <label>
               <span>Адрес</span>
+              <div class="tooltip">
+                <p>Введите название улицы, дома и квартиры</p>
+              </div>
               <input type="text" placeholder="ул. Большая Конюшенная, 19/8">
             </label>
-            <button type="submit">Отправить</button>
+            <button class="button button--secondary" type="submit">Отправить</button>
           </form>
         </div>
       </section>
 
-      <section>
+      <section class="contacts">
         <h2>Наши контакты</h2>
         <address>
           <p>Адрес главного офиса <br>
@@ -236,13 +259,13 @@
           <p>Для заказов по телефону:</p>
           <a href="tel:+78128121212">+7 (812) 812-12-12</a>
           <p>(с 10 до 20 ежедневно)</p>
-          <button type="button">Форма обратной связи</button>
+          <button class="button button--secondary" type="button">Форма обратной связи</button>
         </address>
       </section>
 
     </main>
 
-    <footer>
+    <footer class="main-footer container">
       <ul>
         <li><a href="#">Vk.com</a></li>
         <li><a href="#">Facebook</a></li>
@@ -276,6 +299,7 @@
           <span>Текст письма:</span>
           <textarea placeholder="В свободной форме"></textarea>
         </label>
+        <button class="button button--secondary" type="submit">Отправить</button>
       </form>
     </section>
 

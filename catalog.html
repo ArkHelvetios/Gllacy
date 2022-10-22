@@ -1,91 +1,113 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html class="page" lang="ru">
   <head>
     <meta charset="utf-8">
     <title>Магазин мороженного «Глейси»</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="img/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="img/favicon/favicon180.png">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
-  <body>
+  <body class="page-body">
 
-    <header>
-      <nav>
-        <a href="index.html">
-          <img src="img/gllacy-logo.svg" alt="Логотип магазина Глейси" width="137" height="56">
-        </a>
-        <ul>
-          <li>
-            <a>Каталог</a>
-            <ul class="popup">
-              <li><a href="#">Новинки</a></li>
-              <li><a>Сливочное</a></li>
-              <li><a href="#">Щербеты</a></li>
-              <li><a href="#">Фруктовый лед</a></li>
-              <li><a href="#">Мелорин</a></li>
-            </ul>
+    <header class="main-header container">
+      <a class="main-header__logo" href="index.html">
+        <img src="img/gllacy-logo.svg" alt="Логотип магазина Глейси" width="137" height="56">
+      </a>
+      <nav class="navigation">
+        <ul class="navigation__list">
+          <li class="navigation__item">
+            <a class="header-button current-page">Каталог</a>
+            <div class="popup popup--left">
+              <ul class="navigation__submenu popup__inner">
+                <li class="navigation__novelties"><a href="#">Новинки</a></li>
+                <li><a>Сливочное</a></li>
+                <li><a href="#">Щербеты</a></li>
+                <li><a href="#">Фруктовый лед</a></li>
+                <li><a href="#">Мелорин</a></li>
+              </ul>
+            </div>
           </li>
-          <li><a href="#">Доставка и оплата</a></li>
-          <li><a href="#">О компании</a></li>
+          <li class="navigation__item"><a class="header-button" href="#">Доставка и оплата</a></li>
+          <li class="navigation__item"><a class="header-button" href="#">О компании</a></li>
         </ul>
       </nav>
-      <a href="tel:+78005558628">+7 800 555-86-28</a>
-      <ul>
-        <li>
-          <a href="#">Поиск по сайту</a>
-          <div class="popup">
-            <form action="#" method="get">
-              <label>
-                <span>Поисковой запрос:</span>
-                <input type="search" placeholder="Поиск по сайту">
-              </label>
-            </form>
-          </div>
-        </li>
-        <li>
-          <a href="#">Вход</a>
-          <div class="popup">
-            <p>Личный кабинет</p>
-            <form action="#" method="get">
-              <label>
-                <span>Ваш Email</span>
-                <input type="email" placeholder="email@example.com">
-              </label>
-              <label>
-                <span>Ваш пароль</span>
-                <input type="password" placeholder="••••••">
-              </label>
-              <button type="submit">Войти</button>
-              <a href="#">Забыли пароль?</a>
-              <a href="#">Регистрация</a>
-            </form>
-          </div>
-        </li>
-        <li>
-          <a href="#"><span>Корзина: </span>2 товара</a>
-          <div class="popup">
-            <p>Корзина</p>
-            <ul>
-              <li>
-                <img src="img/icecream/icecream-raspberry.jpg" alt="Шарик малинового мороженного" width="46" height="46">
-                <p>Малинка</p>
-                <p>1 кг х 310 ₽</p>
-                <p>310 ₽</p>
-                <a href="#">Удалить</a>
-              </li>
-              <li>
-                <img src="img/icecream/icecream-bubblegum.jpg" alt="Шарик малинового мороженного" width="46" height="46">
-                <p>Бабл-гам</p>
-                <p>1,5 кг х 320 ₽</p>
-                <p>480 ₽</p>
-                <a href="#">Удалить</a>
-              </li>
-            </ul>
-            <p>Итого: 790 ₽</p>
-            <a href="#">Оформить заказ</a>
-          </div>
-        </li>
-      </ul>
+      <div class="user-menu">
+        <a class="user-menu__phone" href="tel:+78005558628">+7 800 555-86-28</a>
+        <ul class="user-menu__list">
+          <li class="user-menu__item header-search">
+            <a class="header-button header-search__button" href="#">
+              <span class="visually-hidden">Поиск по сайту</span>
+            </a>
+            <div class="popup">
+              <form class="popup__inner header-search__form" action="#" method="get">
+                <label>
+                  <span class="visually-hidden">Поисковой запрос:</span>
+                  <input type="search" placeholder="Поиск по сайту">
+                </label>
+              </form>
+            </div>
+          </li>
+          <li class="user-menu__item header-login">
+            <a class="header-button header-login__button" href="#">Вход</a>
+            <div class="popup">
+              <div class="popup__inner header-login__box">
+                <p class="header-login__title">Личный кабинет</p>
+                <form class="header-login__form" action="#" method="get">
+                  <label>
+                    <span class="visually-hidden">Ваш Email</span>
+                    <input type="email" placeholder="email@example.com">
+                  </label>
+                  <label>
+                    <span class="visually-hidden">Ваш пароль</span>
+                    <input type="password" placeholder="••••••">
+                  </label>
+                  <button class="button button--secondary" type="submit">Войти</button>
+                  <a href="#">Забыли пароль?</a>
+                  <a href="#">Регистрация</a>
+                </form>
+              </div>
+            </div>
+          </li>
+          <li class="user-menu__item header-cart">
+            <a class="header-button header-cart__button" href="#"><span class="visually-hidden">Корзина: </span>2 товара</a>
+            <div class="popup">
+              <div class="popup__inner header-cart__box">
+                <p class="header-cart__title">Корзина</p>
+                <ul class="header-cart__list">
+                  <li class="header-cart__item cart-item">
+                    <img src="img/icecream/icecream-raspberry.jpg" alt="Шарик малинового мороженного" width="46" height="46">
+                    <div class="cart-item__info">
+                      <p class="cart-item__title">Малинка</p>
+                      <p>1 кг х 310 ₽</p>
+                    </div>
+                    <p class="cart-item__price">310 ₽</p>
+                    <a class="cart-item__delete" href="#"><span class="visually-hidden">Удалить</span></a>
+                  </li>
+                  <li class="header-cart__item cart-item">
+                    <img src="img/icecream/icecream-bubblegum.jpg" alt="Шарик малинового мороженного" width="46" height="46">
+                    <div class="cart-item__info">
+                      <p class="cart-item__title">Бабл-гам</p>
+                      <p>1,5 кг х 320 ₽</p>
+                    </div>
+                    <p class="cart-item__price">480 ₽</p>
+                    <a class="cart-item__delete" href="#"><span class="visually-hidden">Удалить</span></a>
+                  </li>
+                </ul>
+                <div class="header-cart__footer">
+                  <a class="button button--secondary" href="#">Оформить заказ</a>
+                  <p class="header-cart__total">Итого: 790 ₽</p>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
     </header>
 
-    <main>
+    <main class="container">
       <ul>
         <li><a href="index.html">Главная</a></li>
         <li><a href="index.html">Каталог</a></li>
@@ -242,7 +264,7 @@
           </li>
         </ul>
 
-        <a href="#">Показать еще</a>
+        <a class="button" href="#">Показать еще</a>
 
         <ul>
           <li><a>1</a></li>
@@ -256,7 +278,7 @@
 
     </main>
 
-    <footer>
+    <footer class="main-footer container">
       <ul>
         <li><a href="#">Vk.com</a></li>
         <li><a href="#">Facebook</a></li>
