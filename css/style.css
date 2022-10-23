@@ -258,13 +258,57 @@ input:disabled {
   outline-color: var(--basic-grey-extra-dark);
 }
 
-/* HEADER */
+/* SOCIALS */
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.socials__button {
+  display: block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  outline: 2px solid var(--basic-grey-extra-light-30);
+  outline-offset: 0;
+  margin: 2px;
+  transition-duration: 200ms;
+}
+
+.socials__button:hover {
+  background-color: var(--basic-grey-extra-dark);
+}
+
+.socials__button:focus {
+  background-color: var(--basic-grey-extra-dark);
+  outline: 2px solid var(--basic-grey-extra-dark);
+  outline-offset: 0;
+}
+
+.socials__button--vk {
+  background-image: url(../img/icons/icon-vk.svg);
+}
+
+.socials__button--fb {
+  background-image: url(../img/icons/icon-facebook.svg);
+}
+
+.socials__button--inst {
+  background-image: url(../img/icons/icon-instagram.svg);
+}
+
+/* === HEADER === */
 
 .main-header {
   display: grid;
   grid-template-columns: 137px 1fr 1fr;
   gap: 16px;
-  padding-top: 24px;
+  padding: 24px 0;
 }
 
 .main-header__logo {
@@ -691,3 +735,197 @@ input:disabled {
 .header-cart__total {
   margin: 0;
 }
+
+/* === PROMO === */
+
+.promo {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 630px;
+  padding: 21px 0;
+  margin-bottom: 80px;
+}
+
+/* SLIDER */
+
+.slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 630px;
+  overflow: hidden;
+}
+
+.slider__list,
+.slider-text__list {
+  display: flex;
+  min-width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* SLIDER PICTURES */
+
+.slider__item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 40px;
+  padding: 0 5px;
+  opacity: 0.4;
+}
+
+.slider__item img {
+  max-width: none;
+  width: 91px;
+  height: 150px;
+  object-fit: contain;
+}
+
+.slider__item::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: var(--basic-grey-extra-light-40);
+  z-index: -1;
+}
+
+.slider__item--current {
+  opacity: 1;
+  padding: 0 21px;
+}
+
+.slider__item--current img {
+  max-width: none;
+  width: 306px;
+  height: 507px;
+  object-fit: contain;
+}
+
+.slider__item.slider__item--current::before {
+  width: 312px;
+  height: 312px;
+}
+
+/* SLIDER TEXT */
+
+.slider-text {
+  width: auto;
+}
+
+.slider-text__item {
+  display: none;
+  min-width: 100%;
+  padding: 20px;
+  padding-left: 70px;
+}
+
+.slider-text__item--current {
+  display: block;
+}
+
+.slider-text__item h3 {
+  font-size: 36px;
+  line-height: 46px;
+  font-weight: 900;
+  margin: 0;
+  margin-bottom: 24px;
+}
+
+.slider-text__item p {
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0;
+  margin-bottom: 48px;
+}
+
+/* SLIDER CONTROLS */
+
+.slider__control {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 38px;
+  height: 38px;
+  background-color: var(--basic-grey-extra-light-30);
+  border: 2px solid var(--basic-grey-extra-light);
+  border-radius: 50%;
+  padding: 0;
+  cursor: pointer;
+  transition-duration: 200ms;
+}
+
+.slider__control--next {
+  left: 310px;
+  transform: rotate(180deg);
+}
+
+.slider__control:hover {
+  background-color: var(--basic-grey-extra-light);
+}
+
+.slider__control:focus {
+  border-color: var(--basic-grey-extra-dark);
+  outline: none;
+}
+
+.slider__control:hover path,
+.slider__control:focus path {
+  fill: var(--basic-grey-extra-dark);
+}
+
+.slider__control:disabled {
+  opacity: 0.4;
+}
+
+/* SLIDER DOTS */
+
+.slider-dots {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  left: 0;
+  bottom: 0;
+}
+
+.slider-dots__control {
+  width: 12px;
+  height: 12px;
+  background-color: var(--basic-grey-extra-light-30);
+  border: none;
+  border-radius: 50%;
+  transition-property: background-color;
+  transition-duration: 200ms;
+  cursor: pointer;
+}
+
+.slider-dots__control--current {
+  background-color: var(--basic-grey-extra-light);
+}
+
+.slider-dots__control:hover {
+  outline: 1px solid var(--basic-grey-extra-light);
+  outline-offset: -1px;
+}
+
+.slider-dots__control:focus {
+  outline: 1px solid var(--basic-grey-extra-dark);
+  outline-offset: -1px;
+}
+
+/* PROMO SOCIALS */
+
+.promo .socials {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+
+/* === GIFTS === */
