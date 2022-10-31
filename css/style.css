@@ -102,6 +102,7 @@ a {
   line-height: 22px;
   color: var(--basic-grey-extra-dark);
   background-color: var(--special-pink-light);
+  transition: 500ms;
 }
 
 .page-body--blue {
@@ -187,6 +188,7 @@ input:disabled {
   outline-width: 4px;
   outline-style: solid;
   outline-color: var(--basic-grey-extra-light-40);
+  margin: 4px;
   border: none;
   border-radius: 26px;
   box-shadow: var(--shadow-small);
@@ -308,7 +310,8 @@ input:disabled {
   display: grid;
   grid-template-columns: 137px 1fr 1fr;
   gap: 16px;
-  padding: 24px 0;
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
 
 .main-header__logo {
@@ -753,6 +756,7 @@ input:disabled {
   display: flex;
   align-items: center;
   width: 630px;
+  height: 507px;
   overflow: hidden;
 }
 
@@ -784,8 +788,7 @@ input:disabled {
   object-fit: contain;
 }
 
-.slider__item::before {
-  content: "";
+.slider__item span {
   position: absolute;
   width: 100px;
   height: 100px;
@@ -794,19 +797,18 @@ input:disabled {
   z-index: -1;
 }
 
-.slider__item--current {
+.slider__item.current {
   opacity: 1;
   padding: 0 21px;
 }
 
-.slider__item--current img {
+.slider__item.current img {
   max-width: none;
   width: 306px;
   height: 507px;
-  object-fit: contain;
 }
 
-.slider__item.slider__item--current::before {
+.slider__item.current span {
   width: 312px;
   height: 312px;
 }
@@ -814,18 +816,31 @@ input:disabled {
 /* SLIDER TEXT */
 
 .slider-text {
-  width: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
 }
 
 .slider-text__item {
-  display: none;
   min-width: 100%;
-  padding: 20px;
   padding-left: 70px;
+  padding-right: 20px;
+  transform: scale(0.5);
+  opacity: 0.5;
 }
 
-.slider-text__item--current {
-  display: block;
+.slider-text__item .button {
+  visibility: hidden;
+}
+
+.slider-text__item.current {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.slider-text__item.current .button {
+  visibility: visible;
 }
 
 .slider-text__item h3 {
@@ -905,7 +920,8 @@ input:disabled {
   cursor: pointer;
 }
 
-.slider-dots__control--current {
+.slider-dots__control.current {
+  pointer-events: none;
   background-color: var(--basic-grey-extra-light);
 }
 
